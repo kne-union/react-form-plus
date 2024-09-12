@@ -1,0 +1,49 @@
+.table-list {
+  .ant-card-body {
+    padding: 0;
+  }
+
+  .react-form__field-label {
+    display: none;
+  }
+
+  .react-form__field {
+    margin-bottom: 0 !important;
+  }
+
+  .ant-row:not(:last-child) {
+    border-bottom: solid 1px var(--bg-color-grey-3);
+  }
+
+  .ant-row:hover {
+    background: var(--bg-color-grey-1) !important;
+  }
+
+  .ant-col {
+    padding: 16px;
+    width: var(--col-width);
+  }
+
+  .options {
+    flex-basis: 100px;
+  }
+}
+
+.table-list-header {
+  background: var(--bg-color-grey-1);
+
+  .is-req:before {
+    color: var(--color-warning);
+    content: "*";
+    position: static;
+    display: inline-block;
+    margin-right: 4px;
+    font-weight: bold;
+  }
+
+  :global {
+    .ant-col {
+      padding: 8px 16px;
+    }
+  }
+}
