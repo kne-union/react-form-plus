@@ -1,6 +1,6 @@
 {
   "name": "@kne/react-form-plus",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "补充和增强react-form功能",
   "syntax": {
     "esmodules": true
@@ -72,7 +72,7 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
-    "@kne/react-form": ">=3"
+    "@kne/react-form": "*"
   },
   "devDependencies": {
     "@kne/microbundle": "^0.15.5",
