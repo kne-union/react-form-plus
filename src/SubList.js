@@ -3,12 +3,12 @@ import { GroupList, useFormContext } from '@kne/react-form';
 import get from 'lodash/get';
 
 const SubList = props => {
-  const { title, itemTitle, name, column, list, listRender, maxLength, minLength, isUnshift, beforeAdd, afterDelete, defaultLength, className, empty, children } = Object.assign(
+  const { itemTitle, name, column, list, listRender, maxLength, minLength, reverseOrder, beforeAdd, afterDelete, defaultLength, empty, children, ...others } = Object.assign(
     {},
     {
       minLength: 0,
       column: 2,
-      isUnshift: true,
+      reverseOrder: false,
       defaultLength: 1
     },
     props
@@ -19,7 +19,7 @@ const SubList = props => {
   const { formData } = context;
   const allowAdd = !(maxLength && maxLength <= get(formData, `${name}.length`, 0));
   return children(
-    <GroupList name={name} defaultLength={defaultLength} ref={groupRef} empty={empty}>
+    <GroupList name={name} defaultLength={defaultLength} ref={groupRef} empty={empty} reverseOrder={reverseOrder}>
       {(...groupArgs) => {
         //这里兼容一下新老版本
         const {
@@ -36,6 +36,7 @@ const SubList = props => {
         })(groupArgs);
 
         return listRender({
+          ...others,
           id: key,
           column,
           list: typeof list === 'function' ? list(...groupArgs, context) : list,
@@ -57,20 +58,18 @@ const SubList = props => {
       }}
     </GroupList>,
     {
-      title,
-      className,
       allowAdd,
-      isUnshift,
-      onAdd: () => {
+      reverseOrder,
+      onAdd: options => {
         if (
           typeof beforeAdd === 'function'
             ? beforeAdd(name, context, {
-                isUnshift,
+                reverseOrder,
                 group: groupRef.current
               }) !== false
             : true
         ) {
-          groupRef.current.onAdd({ isUnshift });
+          groupRef.current.onAdd(Object.assign({}, { isUnshift: true }, options));
         }
       }
     }

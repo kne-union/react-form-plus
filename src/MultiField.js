@@ -3,14 +3,14 @@ import { GroupList, useFormContext } from '@kne/react-form';
 import get from 'lodash/get';
 
 const MultiField = props => {
-  const { name, label, rule, field, defaultLength, minLength, maxLength, children, itemRender, empty, ...others } = Object.assign({}, { defaultLength: 1, minLength: 0 }, props);
+  const { name, label, rule, field, defaultLength, minLength, maxLength, children, itemRender, empty, reverseOrder, ...others } = Object.assign({}, { defaultLength: 1, minLength: 0, reverseOrder: false }, props);
   const ref = useRef(null);
   const CurrentFiled = field;
   const context = useFormContext();
   const { formData } = context;
   const allowAdd = !(maxLength && maxLength <= get(formData, `${name}.length`, 0));
   return children(
-    <GroupList ref={ref} name={name} defaultLength={Math.max(defaultLength, minLength, 1)} empty={empty}>
+    <GroupList ref={ref} name={name} defaultLength={Math.max(defaultLength, minLength, 1)} empty={empty} reverseOrder={reverseOrder}>
       {(...groupArgs) => {
         //这里兼容一下新老版本
         const { id, index, onRemove, length } = (groupArgs => {
@@ -32,8 +32,9 @@ const MultiField = props => {
     </GroupList>,
     {
       allowAdd,
-      onAdd: () => {
-        ref.current.onAdd();
+      reverseOrder,
+      onAdd: options => {
+        ref.current.onAdd(Object.assign({}, { isUnshift: false }, options));
       }
     }
   );

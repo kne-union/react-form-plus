@@ -109,7 +109,7 @@ const {default: Form, Input, TextArea} = ReactForm;
 const {Row, Col, Button, Card, Empty, Flex} = antd;
 
 const BaseExample = () => {
-    return <Form>
+    return <Form debug>
         <SubList title="列表" itemTitle={({index}) => `项目${index + 1}`} empty={<Empty/>}
                  list={[<Input name="name" label="名称" rule="REQ"/>, <Input name="field1" label="字段1" rule="REQ"/>,
                      <Input name="field2" label="字段2" rule="REQ"/>, <Input name="field3" label="字段3" rule="REQ"/>,
