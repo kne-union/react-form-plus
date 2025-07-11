@@ -1,6 +1,6 @@
 {
   "name": "@kne/react-form-plus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "补充和增强react-form功能",
   "syntax": {
     "esmodules": true
