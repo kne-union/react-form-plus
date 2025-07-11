@@ -1,12 +1,20 @@
 import React, { Fragment } from 'react';
 import { useFormContext } from '@kne/react-form';
+import { useRef, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 const FieldList = props => {
   const { list, groupArgs, ignoreFieldProps, itemRender } = Object.assign({}, { ignoreFieldProps: [] }, props);
   const context = useFormContext();
+  const hiddenRef = useRef(null);
   const contextApi = Object.assign({}, context, groupArgs ? { groupArgs } : {});
+  const [isMount, setIsMount] = useState(false);
+  useEffect(() => {
+    setIsMount(true);
+  }, []);
   return (
     <>
+      <div ref={hiddenRef} style={{ display: 'none' }} />
       {list
         .filter(item => {
           if (typeof item.props.display === 'function') {
@@ -47,7 +55,7 @@ const FieldList = props => {
             />
           );
 
-          return <Fragment key={key}>{itemRender(innerComponent, targetProps)}</Fragment>;
+          return <Fragment key={key}>{targetProps.hidden ? isMount && createPortal(innerComponent, hiddenRef.current) : itemRender(innerComponent, targetProps)}</Fragment>;
         })}
     </>
   );
