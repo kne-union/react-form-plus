@@ -6,6 +6,7 @@ const FormInfo = props => {
   return children(
     <FieldList
       list={list}
+      groupArgs={groupArgs}
       itemRender={(children, targetProps) =>
         itemRender(
           children,
