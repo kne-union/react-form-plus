@@ -17,7 +17,8 @@ const SubList = props => {
   const groupRef = useRef(null);
   const context = useFormContext();
   const { formData } = context;
-  const allowAdd = !(maxLength && maxLength <= get(formData, `${name}.length`, 0));
+  const dataLength = get(formData, `${name}.length`, 0);
+  const allowAdd = !(maxLength && maxLength <= dataLength);
   return children(
     <GroupList name={name} defaultLength={defaultLength} ref={groupRef} empty={empty} reverseOrder={reverseOrder}>
       {(...groupArgs) => {
@@ -58,6 +59,10 @@ const SubList = props => {
       }}
     </GroupList>,
     {
+      list,
+      dataLength,
+      minLength,
+      maxLength,
       allowAdd,
       reverseOrder,
       onAdd: options => {

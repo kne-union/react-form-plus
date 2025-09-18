@@ -52,7 +52,7 @@ const TableList = props => {
             list={list}
             groupArgs={groupArgs}
             itemRender={(children, targetProps) => {
-              headerRef.current(targetProps);
+              headerRef.current && headerRef.current(targetProps);
               return itemRender(children, targetProps);
             }}
           />,
@@ -66,9 +66,11 @@ const TableList = props => {
       {(inner, others) => {
         return children(
           <>
-            <TableHeader ref={headerRef} headerItemRender={headerItemRender}>
-              {headerRender}
-            </TableHeader>
+            {others.dataLength > 0 && (
+              <TableHeader ref={headerRef} headerItemRender={headerItemRender}>
+                {headerRender}
+              </TableHeader>
+            )}
             {inner}
           </>,
           others
