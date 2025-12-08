@@ -8,7 +8,7 @@ const MultiField = props => {
   const CurrentFiled = field;
   const context = useFormContext();
   const { formData } = context;
-  const allowAdd = !(maxLength && maxLength <= get(formData, `${name}.length`, 0));
+  const allowAdd = !(maxLength && maxLength <= get(formData, `${name}.length`, 0)) && !others.disabled;
   return children(
     <GroupList ref={ref} name={name} defaultLength={Math.max(defaultLength, minLength, 1)} empty={empty} reverseOrder={reverseOrder}>
       {(...groupArgs) => {
@@ -21,7 +21,7 @@ const MultiField = props => {
           return { id: key, index, onRemove, length };
         })(groupArgs);
 
-        const allowRemove = length > Math.max(minLength, 1);
+        const allowRemove = length > Math.max(minLength, 1) && !others.disabled;
         return itemRender(<CurrentFiled {...others} name={name} label={label} rule={rule} />, {
           id,
           index,
