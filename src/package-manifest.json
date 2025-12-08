@@ -1,0 +1,257 @@
+{
+  "description": "react-form-plus 包的主要导出模块入口，提供增强的表单组件功能",
+  "modules": {
+    "default": {
+      "description": "默认导出 FormInfo 组件，用于渲染表单信息布局",
+      "type": "ReactNode"
+    },
+    "FormInfo": {
+      "description": "表单信息布局组件，提供列式布局和字段渲染功能",
+      "type": "ReactNode",
+      "props": {
+        "list": {
+          "description": "表单字段列表配置",
+          "type": "array"
+        },
+        "groupArgs": {
+          "description": "分组参数数组",
+          "type": "array"
+        },
+        "column": {
+          "description": "列数，默认为2",
+          "type": "number"
+        },
+        "itemRender": {
+          "description": "字段渲染函数",
+          "type": "function"
+        },
+        "children": {
+          "description": "子元素渲染函数",
+          "type": "function"
+        }
+      }
+    },
+    "FieldList": {
+      "description": "字段列表组件，用于批量渲染表单字段",
+      "type": "ReactNode",
+      "props": {
+        "list": {
+          "description": "字段配置列表",
+          "type": "array"
+        },
+        "groupArgs": {
+          "description": "分组参数数组",
+          "type": "array"
+        },
+        "ignoreFieldProps": {
+          "description": "需要忽略的字段属性名数组",
+          "type": "array"
+        },
+        "itemRender": {
+          "description": "字段项渲染函数",
+          "type": "function"
+        }
+      }
+    },
+    "MultiField": {
+      "description": "多字段组件，支持动态添加和删除多个相同字段",
+      "type": "ReactNode",
+      "props": {
+        "name": {
+          "description": "字段名称",
+          "type": "string"
+        },
+        "label": {
+          "description": "字段标签",
+          "type": "ReactNode"
+        },
+        "rule": {
+          "description": "验证规则",
+          "type": "string"
+        },
+        "field": {
+          "description": "字段组件类型",
+          "type": "ReactNode"
+        },
+        "defaultLength": {
+          "description": "默认长度，默认为1",
+          "type": "number"
+        },
+        "minLength": {
+          "description": "最小长度，默认为0",
+          "type": "number"
+        },
+        "maxLength": {
+          "description": "最大长度",
+          "type": "number"
+        },
+        "children": {
+          "description": "子元素渲染函数",
+          "type": "function"
+        },
+        "itemRender": {
+          "description": "字段项渲染函数",
+          "type": "function"
+        },
+        "empty": {
+          "description": "空状态展示",
+          "type": "ReactNode"
+        },
+        "reverseOrder": {
+          "description": "是否倒序，默认为false",
+          "type": "boolean"
+        },
+        "disabled": {
+          "description": "是否禁用",
+          "type": "boolean"
+        }
+      }
+    },
+    "SubList": {
+      "description": "子列表组件，支持动态添加和删除子项列表",
+      "type": "ReactNode",
+      "props": {
+        "itemTitle": {
+          "description": "子项标题",
+          "type": "ReactNode|function"
+        },
+        "name": {
+          "description": "字段名称",
+          "type": "string"
+        },
+        "column": {
+          "description": "列数，默认为2",
+          "type": "number"
+        },
+        "list": {
+          "description": "列表配置",
+          "type": "array|function"
+        },
+        "listRender": {
+          "description": "列表渲染函数",
+          "type": "function"
+        },
+        "maxLength": {
+          "description": "最大长度",
+          "type": "number"
+        },
+        "minLength": {
+          "description": "最小长度，默认为0",
+          "type": "number"
+        },
+        "reverseOrder": {
+          "description": "是否倒序，默认为false",
+          "type": "boolean"
+        },
+        "beforeAdd": {
+          "description": "添加前的钩子函数",
+          "type": "function"
+        },
+        "afterDelete": {
+          "description": "删除后的钩子函数",
+          "type": "function"
+        },
+        "defaultLength": {
+          "description": "默认长度，默认为1",
+          "type": "number"
+        },
+        "empty": {
+          "description": "空状态展示",
+          "type": "ReactNode"
+        },
+        "children": {
+          "description": "子元素渲染函数",
+          "type": "function"
+        }
+      }
+    },
+    "TableList": {
+      "description": "表格列表组件，以表格形式展示动态列表数据",
+      "type": "ReactNode",
+      "props": {
+        "list": {
+          "description": "列表配置",
+          "type": "array|function"
+        },
+        "children": {
+          "description": "子元素渲染函数",
+          "type": "function"
+        },
+        "listRender": {
+          "description": "列表渲染函数",
+          "type": "function"
+        },
+        "itemRender": {
+          "description": "字段项渲染函数",
+          "type": "function"
+        },
+        "headerRender": {
+          "description": "表头渲染函数",
+          "type": "function"
+        },
+        "headerItemRender": {
+          "description": "表头项渲染函数",
+          "type": "function"
+        },
+        "itemTitle": {
+          "description": "子项标题",
+          "type": "ReactNode|function"
+        },
+        "name": {
+          "description": "字段名称",
+          "type": "string"
+        },
+        "column": {
+          "description": "列数，默认为2",
+          "type": "number"
+        },
+        "maxLength": {
+          "description": "最大长度",
+          "type": "number"
+        },
+        "minLength": {
+          "description": "最小长度，默认为0",
+          "type": "number"
+        },
+        "reverseOrder": {
+          "description": "是否倒序，默认为false",
+          "type": "boolean"
+        },
+        "beforeAdd": {
+          "description": "添加前的钩子函数",
+          "type": "function"
+        },
+        "afterDelete": {
+          "description": "删除后的钩子函数",
+          "type": "function"
+        },
+        "defaultLength": {
+          "description": "默认长度，默认为1",
+          "type": "number"
+        },
+        "empty": {
+          "description": "空状态展示",
+          "type": "ReactNode"
+        }
+      }
+    },
+    "TableHeader": {
+      "description": "表格头部组件，用于渲染表格列标题",
+      "type": "ReactNode",
+      "props": {
+        "children": {
+          "description": "子元素渲染函数",
+          "type": "function"
+        },
+        "headerItemRender": {
+          "description": "表头项渲染函数",
+          "type": "function"
+        },
+        "display": {
+          "description": "是否显示",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
