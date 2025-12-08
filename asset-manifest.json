@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/react-form-plus/static/js/main.0ee26804.js",
-    "react_form_plus_0_1_5.js": "/react-form-plus/remoteEntry.js",
+    "main.js": "/react-form-plus/static/js/main.4e8f3ece.js",
+    "react_form_plus_0_1_6.js": "/react-form-plus/remoteEntry.js",
     "static/css/196.21fb53a5.chunk.css": "/react-form-plus/static/css/196.21fb53a5.chunk.css",
-    "static/js/196.de52c340.chunk.js": "/react-form-plus/static/js/196.de52c340.chunk.js",
+    "static/js/196.0110fd21.chunk.js": "/react-form-plus/static/js/196.0110fd21.chunk.js",
     "static/js/830.d3810c8c.chunk.js": "/react-form-plus/static/js/830.d3810c8c.chunk.js",
     "static/js/848.137078c4.chunk.js": "/react-form-plus/static/js/848.137078c4.chunk.js",
     "static/js/498.9a2c862a.chunk.js": "/react-form-plus/static/js/498.9a2c862a.chunk.js",
@@ -12,12 +12,12 @@
     "static/js/288.5375fc9d.chunk.js": "/react-form-plus/static/js/288.5375fc9d.chunk.js",
     "static/js/614.2db71a77.chunk.js": "/react-form-plus/static/js/614.2db71a77.chunk.js",
     "static/css/85.a18d4d49.chunk.css": "/react-form-plus/static/css/85.a18d4d49.chunk.css",
-    "static/js/85.a49e9300.chunk.js": "/react-form-plus/static/js/85.a49e9300.chunk.js",
+    "static/js/85.d751c576.chunk.js": "/react-form-plus/static/js/85.d751c576.chunk.js",
     "static/js/201.4e5cbf4b.chunk.js": "/react-form-plus/static/js/201.4e5cbf4b.chunk.js",
     "static/js/84.0ae6e292.chunk.js": "/react-form-plus/static/js/84.0ae6e292.chunk.js",
     "static/js/467.966d6e99.chunk.js": "/react-form-plus/static/js/467.966d6e99.chunk.js",
     "static/js/86.c13b550a.chunk.js": "/react-form-plus/static/js/86.c13b550a.chunk.js",
-    "static/js/626.6de8e180.chunk.js": "/react-form-plus/static/js/626.6de8e180.chunk.js",
+    "static/js/245.6d6a2430.chunk.js": "/react-form-plus/static/js/245.6d6a2430.chunk.js",
     "static/js/117.39642eec.chunk.js": "/react-form-plus/static/js/117.39642eec.chunk.js",
     "static/js/496.949f6dfa.chunk.js": "/react-form-plus/static/js/496.949f6dfa.chunk.js",
     "static/js/425.9a96ebf5.chunk.js": "/react-form-plus/static/js/425.9a96ebf5.chunk.js",
@@ -27,10 +27,10 @@
     "static/js/736.5a7016bb.chunk.js": "/react-form-plus/static/js/736.5a7016bb.chunk.js",
     "static/js/178.a4df4be7.chunk.js": "/react-form-plus/static/js/178.a4df4be7.chunk.js",
     "index.html": "/react-form-plus/index.html",
-    "main.0ee26804.js.map": "/react-form-plus/static/js/main.0ee26804.js.map",
+    "main.4e8f3ece.js.map": "/react-form-plus/static/js/main.4e8f3ece.js.map",
     "remoteEntry.js.map": "/react-form-plus/remoteEntry.js.map",
     "196.21fb53a5.chunk.css.map": "/react-form-plus/static/css/196.21fb53a5.chunk.css.map",
-    "196.de52c340.chunk.js.map": "/react-form-plus/static/js/196.de52c340.chunk.js.map",
+    "196.0110fd21.chunk.js.map": "/react-form-plus/static/js/196.0110fd21.chunk.js.map",
     "830.d3810c8c.chunk.js.map": "/react-form-plus/static/js/830.d3810c8c.chunk.js.map",
     "848.137078c4.chunk.js.map": "/react-form-plus/static/js/848.137078c4.chunk.js.map",
     "498.9a2c862a.chunk.js.map": "/react-form-plus/static/js/498.9a2c862a.chunk.js.map",
@@ -39,12 +39,12 @@
     "288.5375fc9d.chunk.js.map": "/react-form-plus/static/js/288.5375fc9d.chunk.js.map",
     "614.2db71a77.chunk.js.map": "/react-form-plus/static/js/614.2db71a77.chunk.js.map",
     "85.a18d4d49.chunk.css.map": "/react-form-plus/static/css/85.a18d4d49.chunk.css.map",
-    "85.a49e9300.chunk.js.map": "/react-form-plus/static/js/85.a49e9300.chunk.js.map",
+    "85.d751c576.chunk.js.map": "/react-form-plus/static/js/85.d751c576.chunk.js.map",
     "201.4e5cbf4b.chunk.js.map": "/react-form-plus/static/js/201.4e5cbf4b.chunk.js.map",
     "84.0ae6e292.chunk.js.map": "/react-form-plus/static/js/84.0ae6e292.chunk.js.map",
     "467.966d6e99.chunk.js.map": "/react-form-plus/static/js/467.966d6e99.chunk.js.map",
     "86.c13b550a.chunk.js.map": "/react-form-plus/static/js/86.c13b550a.chunk.js.map",
-    "626.6de8e180.chunk.js.map": "/react-form-plus/static/js/626.6de8e180.chunk.js.map",
+    "245.6d6a2430.chunk.js.map": "/react-form-plus/static/js/245.6d6a2430.chunk.js.map",
     "117.39642eec.chunk.js.map": "/react-form-plus/static/js/117.39642eec.chunk.js.map",
     "496.949f6dfa.chunk.js.map": "/react-form-plus/static/js/496.949f6dfa.chunk.js.map",
     "425.9a96ebf5.chunk.js.map": "/react-form-plus/static/js/425.9a96ebf5.chunk.js.map",
@@ -55,6 +55,6 @@
     "178.a4df4be7.chunk.js.map": "/react-form-plus/static/js/178.a4df4be7.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.0ee26804.js"
+    "static/js/main.4e8f3ece.js"
   ]
 }
