@@ -4,7 +4,7 @@ import FieldList from './FieldList';
 import clone from 'lodash/clone';
 
 const TableHeader = forwardRef((props, ref) => {
-  const { children, headerItemRender } = Object.assign({}, props);
+  const { children, headerItemRender, display } = Object.assign({}, props);
   const [headers, setHeaders] = useState(new Map());
   useImperativeHandle(ref, () => {
     return targetProps => {
@@ -20,6 +20,9 @@ const TableHeader = forwardRef((props, ref) => {
       });
     };
   }, []);
+  if (!display) {
+    return null;
+  }
   return children(
     Array.from(headers).map(([id, { label, rule }]) => {
       return headerItemRender(label, {
@@ -66,11 +69,9 @@ const TableList = props => {
       {(inner, others) => {
         return children(
           <>
-            {others.dataLength > 0 && (
-              <TableHeader ref={headerRef} headerItemRender={headerItemRender}>
-                {headerRender}
-              </TableHeader>
-            )}
+            <TableHeader ref={headerRef} headerItemRender={headerItemRender} display={others.dataLength > 0}>
+              {headerRender}
+            </TableHeader>
             {inner}
           </>,
           others
