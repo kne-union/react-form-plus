@@ -2,8 +2,30 @@
   "isFull": false,
   "list": [
     {
-      "title": "基础表单示例",
-      "description": "展示如何使用 `FormInfo` 和 `Input` 组件快速生成基础表单，支持字段校验和动态布局。",
+      "title": "FieldList 字段列表",
+      "description": "展示 `FieldList` 组件的核心功能，包括动态显示/隐藏、字段属性设置等高级特性。",
+      "code": "./field-list.js",
+      "scope": [
+        {
+          "name": "_ReactFormPlus",
+          "packageName": "@kne/current-lib_react-form-plus"
+        },
+        {
+          "name": "ReactForm",
+          "packageName": "@kne/react-form-antd"
+        },
+        {
+          "packageName": "@kne/react-form-antd/dist/index.css"
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    },
+    {
+      "title": "FormInfo 基础表单",
+      "description": "展示 `FormInfo` 组件的完整功能，包括列布局、动态字段显示、表单提交等真实业务场景。",
       "code": "./base.js",
       "scope": [
         {
@@ -24,8 +46,8 @@
       ]
     },
     {
-      "title": "子列表表单示例",
-      "description": "展示如何使用 `SubList` 组件实现嵌套表单结构，支持动态添加和删除子项。",
+      "title": "SubList 子列表表单",
+      "description": "展示 `SubList` 组件的完整功能，包括动态字段列表、数量限制、回调函数等，以教育经历管理为例。",
       "code": "./sub-list.js",
       "scope": [
         {
@@ -42,12 +64,16 @@
         {
           "name": "antd",
           "packageName": "antd"
+        },
+        {
+          "name": "dayjs",
+          "packageName": "dayjs"
         }
       ]
     },
     {
-      "title": "多字段表单示例",
-      "description": "展示如何使用 `MultiField` 组件实现动态增减字段的功能，支持自定义布局和校验规则。",
+      "title": "MultiField 多字段",
+      "description": "展示 `MultiField` 组件的完整功能，包括动态增减、数量限制、反向排列等，以项目成员管理为例。",
       "code": "./multi-field.js",
       "scope": [
         {
@@ -68,9 +94,35 @@
       ]
     },
     {
-      "title": "表格表单示例",
-      "description": "展示如何使用 `TableList` 组件实现表格布局的表单，支持动态添加和删除行。",
+      "title": "TableList 表格表单",
+      "description": "展示 `TableList` 组件的完整功能，包括表格布局、动态行列、数量限制等，以订单明细管理为例。",
       "code": "./table-list.js",
+      "scope": [
+        {
+          "name": "_ReactFormPlus",
+          "packageName": "@kne/current-lib_react-form-plus"
+        },
+        {
+          "name": "ReactForm",
+          "packageName": "@kne/react-form-antd"
+        },
+        {
+          "packageName": "@kne/react-form-antd/dist/index.css"
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        },
+        {
+          "name": "dayjs",
+          "packageName": "dayjs"
+        }
+      ]
+    },
+    {
+      "title": "综合示例 - 员工入职登记",
+      "description": "综合展示所有组件的组合使用，包括分步骤表单、多种组件配合、完整业务流程。",
+      "code": "./advanced.js",
       "scope": [
         {
           "name": "_ReactFormPlus",

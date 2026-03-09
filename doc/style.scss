@@ -1,4 +1,10 @@
+.table-list, .table-list-header {
+  min-width: 800px;
+}
+
 .table-list {
+  overflow: auto;
+
   .ant-card-body {
     padding: 0;
   }

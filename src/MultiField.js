@@ -21,7 +21,7 @@ const MultiField = props => {
           return { id: key, index, onRemove, length };
         })(groupArgs);
 
-        const allowRemove = length > Math.max(minLength, 1) && !others.disabled;
+        const allowRemove = length > Math.max(minLength, 0) && !others.disabled;
         return itemRender(<CurrentFiled {...others} name={name} label={label} rule={rule} />, {
           id,
           index,
@@ -34,7 +34,7 @@ const MultiField = props => {
       allowAdd,
       reverseOrder,
       onAdd: options => {
-        ref.current.onAdd(Object.assign({}, { isUnshift: false }, options));
+        ref.current.onAdd(Object.assign({}, options));
       }
     }
   );
