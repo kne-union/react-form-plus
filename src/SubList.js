@@ -74,7 +74,7 @@ const SubList = props => {
               }) !== false
             : true
         ) {
-          groupRef.current.onAdd(Object.assign({}, { isUnshift: true }, options));
+          groupRef.current.onAdd(Object.assign({}, options));
         }
       }
     }
