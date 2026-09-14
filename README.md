@@ -1364,6 +1364,8 @@ render(<AdvancedExample />);
 
 表单字段列表组件，用于渲染一组表单字段，支持动态显示/隐藏、额外属性设置等功能。
 
+未 `filter` 的 `list`（含 `display={false}` / `hidden`）会向 `@kne/react-form`（`>=3.1.11`）登记声明 path，供 pending 对账：从 list 拿掉才 forget，仅隐藏会保留值。
+
 | 属性                 | 类型                                     | 默认值  | 描述                               |
 |--------------------|----------------------------------------|------|----------------------------------|
 | `list`             | `Array<ReactElement>`                  | -    | **必填**，表单字段配置数组，每个元素是一个 React 元素 |
@@ -1377,6 +1379,7 @@ render(<AdvancedExample />);
 - `block`: `boolean` - 是否占据整行
 - `hidden`: `boolean` - 是否隐藏（隐藏字段仍会渲染，只是不可见）
 - `isBlock`: `boolean` - 同 block，用于兼容
+- `fieldKey`: `string | number` - 稳定 React key；默认用 `name`（分组内为 `groupId:name`），**不要拼 list 下标**
 - `setExtraProps`: `(params) => object` - 动态设置字段额外属性的函数
 
 #### FormInfo

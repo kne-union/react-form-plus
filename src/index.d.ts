@@ -60,6 +60,7 @@ export interface FieldListProps {
     type: ComponentType<any>;
     props: {
       name?: string;
+      fieldKey?: string | number;
       display?: boolean | ((context: ContextApi) => boolean);
       block?: boolean;
       hidden?: boolean;

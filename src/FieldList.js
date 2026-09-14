@@ -1,17 +1,32 @@
-import React, { Fragment } from 'react';
-import { useFormContext } from '@kne/react-form';
-import { useRef, useEffect, useState } from 'react';
+import React, { Fragment, useId, useRef, useEffect, useState } from 'react';
+import { useFormContext, useGroup } from '@kne/react-form';
 import { createPortal } from 'react-dom';
+import { resolveDeclaredPath, resolveFieldListKey } from './fieldListKey';
 
 const FieldList = props => {
   const { list, groupArgs, ignoreFieldProps, itemRender } = Object.assign({}, { ignoreFieldProps: [] }, props);
   const context = useFormContext();
+  const { name: groupName, index: groupIndex } = useGroup();
+  const sourceId = useId();
   const hiddenRef = useRef(null);
   const contextApi = Object.assign({}, context, groupArgs ? { groupArgs } : {});
   const [isMount, setIsMount] = useState(false);
   useEffect(() => {
     setIsMount(true);
   }, []);
+
+  useEffect(() => {
+    const openApi = context.openApi;
+    if (!openApi || typeof openApi.registerDeclaredPaths !== 'function') {
+      return;
+    }
+    const paths = (Array.isArray(list) ? list : []).map(item => resolveDeclaredPath(item?.props?.name, groupName, groupIndex)).filter(Boolean);
+    openApi.registerDeclaredPaths(sourceId, paths);
+    return () => {
+      openApi.unregisterDeclaredPaths && openApi.unregisterDeclaredPaths(sourceId);
+    };
+  }, [context.openApi, sourceId, list, groupName, groupIndex]);
+
   return (
     <>
       <div ref={hiddenRef} style={{ display: 'none' }} />
@@ -22,16 +37,16 @@ const FieldList = props => {
           }
           return item.props.display !== false;
         })
-        .map((item, index) => {
-          const key = item.props.name + index || (groupArgs && groupArgs[0] + index) || index;
+        .map(item => {
+          const key = resolveFieldListKey(item, groupArgs);
           const targetProps = { key, list, props: item.props },
             componentProps = Object.assign({}, item.props),
             ComponentItem = item.type;
-          ['display', 'block', 'hidden', 'setExtraProps', 'isBlock', ...ignoreFieldProps].forEach(key => {
-            if (item.props.hasOwnProperty(key)) {
-              targetProps[key] = item.props[key];
+          ['display', 'block', 'hidden', 'setExtraProps', 'isBlock', 'fieldKey', ...ignoreFieldProps].forEach(propKey => {
+            if (item.props.hasOwnProperty(propKey)) {
+              targetProps[propKey] = item.props[propKey];
             }
-            delete componentProps[key];
+            delete componentProps[propKey];
           });
 
           if (targetProps.hasOwnProperty('isBlock')) {
