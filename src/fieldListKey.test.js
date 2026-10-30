@@ -1,4 +1,20 @@
-import { resolveDeclaredPath, resolveFieldListKey } from './fieldListKey';
+import { resolveDeclaredPath, resolveFieldListKey, resolveHeaderKey } from './fieldListKey';
+
+describe('resolveHeaderKey', () => {
+  test('不同行的同一列得到相同表头 key', () => {
+    const item = { props: { name: 'title' } };
+    const rowA = { key: resolveFieldListKey(item, [{ id: 'g-a', index: 0 }]), props: item.props };
+    const rowB = { key: resolveFieldListKey(item, [{ id: 'g-b', index: 1 }]), props: item.props };
+    expect(rowA.key).not.toBe(rowB.key);
+    expect(resolveHeaderKey(rowA)).toBe(resolveHeaderKey(rowB));
+  });
+
+  test('优先 fieldKey，其次 name，最后 key', () => {
+    expect(resolveHeaderKey({ key: 'g-a:title', props: { name: 'title', fieldKey: 'k1' } })).toBe('k1');
+    expect(resolveHeaderKey({ key: 'g-a:title', props: { name: 'title' } })).toBe('title');
+    expect(resolveHeaderKey({ key: 'g-a:$unnamed', props: {} })).toBe('g-a:$unnamed');
+  });
+});
 
 describe('resolveFieldListKey', () => {
   test('优先使用 fieldKey，不拼 list 下标', () => {

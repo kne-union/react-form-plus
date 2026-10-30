@@ -2,6 +2,7 @@ import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react'
 import SubList from './SubList';
 import FieldList from './FieldList';
 import clone from 'lodash/clone';
+import { resolveHeaderKey } from './fieldListKey';
 
 const TableHeader = forwardRef((props, ref) => {
   const { children, headerItemRender, display } = Object.assign({}, props);
@@ -9,12 +10,13 @@ const TableHeader = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => {
     return targetProps => {
       setTimeout(() => {
+        const headerKey = resolveHeaderKey(targetProps);
         setHeaders(headers => {
-          if (headers.has(targetProps.key)) {
+          if (headers.has(headerKey)) {
             return headers;
           }
           const newHeaders = clone(headers);
-          newHeaders.set(targetProps.key, targetProps.props);
+          newHeaders.set(headerKey, targetProps.props);
           return newHeaders;
         });
       });
